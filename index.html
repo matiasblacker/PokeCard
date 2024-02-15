@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Pokémon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!-- carta pokemon -->
+    <div id="pokemon-container">
+        <p id="pokemon-name" class="left"></p>
+        <div id="imagen-tipo" class="right">
+        </div>
+        <p class="rightText">ps<span id="pokemon-ps" ></span></p>
+        <div id="fondo">
+            <img id="pokemon-image" src="" alt="">
+        </div>
+        <p id="pokemon-info"></p>
+
+        <div class="info-extra">
+            <div id="pokemon-type">
+            </div>
+            <p id="pokemon-attack">ataque</p>
+            <p id="pokemon-countAttack">10</p>
+        </div>
+        <p class="baraja">Busca en tu baraja 1 carta de energia <i class="fa-solid fa-fire"></i> y únela a este Pokémon.
+            Después, baraja las cartas de tu baraja.
+        </p>
+
+        <div id="pokemon-weakness">
+        </div>
+    </div>
+    <!-- end carta pokemon -->
+
+    <button><a href="index.html" id="cambiar-imagen">Recargar</a></button>
+
+    <script>
+        const imagenesFondo = [
+            "/img/1.jpg",
+            "/img/2.jpg",
+            "/img/3.jpg",
+            "/img/4.jpg",
+            "/img/5.jpg",
+            "/img/6.jpg"
+        ];
+    
+        const cambiarFondoAleatorio = () => {
+        const indiceAleatorio = Math.floor(Math.random() * imagenesFondo.length);
+        const imagenFondoAleatoria = imagenesFondo[indiceAleatorio];
+
+        document.getElementById("fondo").style.backgroundImage = `url(${imagenFondoAleatoria})`;
+        };
+        cambiarFondoAleatorio();
+
+        const botonCambiarFondo = document.getElementById("cambiar-imagen");
+        botonCambiarFondo.addEventListener("click", cambiarFondoAleatorio);
+
+
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
