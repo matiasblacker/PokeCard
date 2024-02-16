@@ -103,7 +103,6 @@ async function obtenerDebilidadesPokemon(tipo) {
 //Funcion principal para obtener un pokemon de forma aleatoria
 async function obtenerPokemonAleatorio() {
     const pokemonId = Math.floor(Math.random() * 300) + 1; // Hay actualmente 898 Pokémon
-
     const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
 
     function cambiarColor(imagenFondo) {
@@ -128,6 +127,8 @@ async function obtenerPokemonAleatorio() {
     try {
         const respuesta = await fetch(apiUrl);
         const data = await respuesta.json();
+
+        document.querySelector(".loader").style.display = "block";
 
         const imagenUrl = data.sprites.other.dream_world.front_default;
         const name = data.name;
@@ -167,7 +168,7 @@ async function obtenerPokemonAleatorio() {
         weaknesses.map(weakness => `<img src="${weakness.image}" alt="${weakness.name}">`).join('') : 
         "No se pudieron obtener las debilidades";
 
-
+        document.querySelector(".loader").style.display = "none";
 
     } catch (error) {
         console.error('Error al obtener el Pokémon:', error);
@@ -175,3 +176,4 @@ async function obtenerPokemonAleatorio() {
 }
 
 obtenerPokemonAleatorio();
+

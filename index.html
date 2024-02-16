@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
@@ -20,6 +20,7 @@
         </div>
         <p class="rightText">ps<span id="pokemon-ps" ></span></p>
         <div id="fondo">
+            <div class="loader"></div>
             <img id="pokemon-image" src="" alt="">
         </div>
         <p id="pokemon-info"></p>
@@ -33,14 +34,14 @@
         <p class="baraja">Busca en tu baraja 1 carta de energia <i class="fa-solid fa-fire"></i> y únela a este Pokémon.
             Después, baraja las cartas de tu baraja.
         </p>
-
+        
         <div id="pokemon-weakness">
         </div>
     </div>
     <!-- end carta pokemon -->
 
     <button><a href="index.html" id="cambiar-imagen">Recargar</a></button>
-
+    
     <script>
         const imagenesFondo = [
             "/img/1.jpg",
