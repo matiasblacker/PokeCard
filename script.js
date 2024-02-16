@@ -1,5 +1,6 @@
 
 //Variables a usar
+document.querySelector(".loader").style.display = "block";
 const pokemonImage = document.getElementById('pokemon-image');
 const pokemonName = document.getElementById('pokemon-name');
 const pokemonPS = document.getElementById('pokemon-ps');
@@ -128,7 +129,7 @@ async function obtenerPokemonAleatorio() {
         const respuesta = await fetch(apiUrl);
         const data = await respuesta.json();
 
-        document.querySelector(".loader").style.display = "block";
+        //document.querySelector(".loader").style.display = "block";
 
         const imagenUrl = data.sprites.other.dream_world.front_default;
         const name = data.name;
